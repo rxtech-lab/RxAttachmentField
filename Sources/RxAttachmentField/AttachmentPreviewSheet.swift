@@ -36,6 +36,7 @@ public struct AttachmentPreviewSheet: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if let markdown, let renderMarkdown {
                     renderMarkdown(markdown, URL(fileURLWithPath: attachment.path))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 } else if FileManager.default.fileExists(atPath: attachment.path) {
                     QuickLookFile(url: URL(fileURLWithPath: attachment.path))
                 } else {
